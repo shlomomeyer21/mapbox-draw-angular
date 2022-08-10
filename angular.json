@@ -12,7 +12,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "my-app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -28,6 +28,10 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/mapbox-gl/dist/mapbox-gl.css",
+              "@mapbox/mapbox-gl-draw/dist/mapbox-gl-draw.css",
+              "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -96,6 +100,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -103,5 +108,11 @@
         }
       }
     }
+  },
+  "cli": {
+    "defaultCollection": "@ngrx/schematics",
+    "schematicCollections": [
+      "@ngrx/schematics"
+    ]
   }
 }

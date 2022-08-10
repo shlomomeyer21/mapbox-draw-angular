@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">Annotations</mat-toolbar>
+<mat-selection-list class="annotation-list" [multiple]=false>
+
+  <ng-container *ngFor="let annotation of annotations$ | async">
+    <mat-list-option (selectedChange)="centerMap(annotation.centerCoordinates)">
+      <div class="annotation-row">
+        <div [ngSwitch]="annotation.feature.geometry.type">
+          <mat-icon matListIcon *ngSwitchCase="'Point'">location_on</mat-icon>
+          <mat-icon matListIcon *ngSwitchCase="'LineString'">timeline</mat-icon>
+          <mat-icon matListIcon *ngSwitchCase="'Polygon'">format_shapes</mat-icon>
+        </div>
+        <div class="annotation-description">
+          <div>{{annotation.feature.id?.toString()?.substring(0,6)}}</div>
+          <div>{{annotation.feature.geometry.type}}</div>
+        </div>
+        <div class="trash" (click)="deleteItem(annotation.feature.id)">
+          <mat-icon matListIcon>delete</mat-icon>
+        </div>
+      </div>
+    </mat-list-option>
+    <mat-divider></mat-divider>
+  </ng-container>
+
+</mat-selection-list>

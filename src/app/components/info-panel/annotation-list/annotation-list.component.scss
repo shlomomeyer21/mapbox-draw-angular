@@ -1,0 +1,31 @@
+::ng-deep {
+    .annotation-list.mat-list-base {
+        padding-top: 0 !important;
+        overflow-y: auto !important;
+        height: calc(100vh - 240px); // hack to make it scroll :(
+
+        .mat-list-text {
+            width: 100% !important;
+            padding: 0 !important;
+        }
+
+        .mat-list-item-content {
+            padding: 0 !important;
+        }
+
+        .annotation-row {
+            display: flex;
+            align-items: center;
+
+            .annotation-description {
+                margin-left: 10px;
+            }
+
+            .trash {
+                margin-left: auto;
+            }
+        }
+
+    }
+
+}

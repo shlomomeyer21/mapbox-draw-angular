@@ -1,0 +1,5 @@
+<mat-button-toggle-group [value]="drawMode$ | async" (change)="onChange($event.value)" name="drawMode" aria-label="Draw Mode">
+    <mat-button-toggle value="draw_point">Point</mat-button-toggle>
+    <mat-button-toggle value="draw_line_string">LineString</mat-button-toggle>
+    <mat-button-toggle value="draw_polygon">Polygon</mat-button-toggle>
+</mat-button-toggle-group>
